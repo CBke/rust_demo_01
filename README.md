@@ -1,6 +1,6 @@
 # rust_demo_01
 
-cargo build -f
+cargo build -r
 
 strip target/release/rt
 
