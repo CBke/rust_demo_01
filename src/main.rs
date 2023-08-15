@@ -1,18 +1,16 @@
-use core::array::from_fn;
-
 fn main() {
     const TERM_WIDTH: usize = 241;
     const WORD: &str = "hello";
-    const FILL: &str = " ";
-
-    let array: [String; TERM_WIDTH - WORD.len()] =
-        from_fn(|i| format!("{}{WORD}\r\n", FILL.repeat(i)));
+    
+    let array: Vec<String> = (0..(TERM_WIDTH - WORD.len()))
+        .map(|i| format!("{}{WORD}\r\n", " ".repeat(i)))
+        .collect();
 
     loop {
-        array.iter()
-            .for_each(|x| print!("{x}"));
+        array.iter().for_each(|x| print!("{x}"));
 
-        array.iter()
+        array
+            .iter()
             .skip(1)
             .rev()
             .skip(1)
