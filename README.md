@@ -1,6 +1,6 @@
 # rust_demo_01
 
-![Rust vs C#](c#.png)
+![Rust vs C#](c%23.png)
 
 cargo build -r
 
