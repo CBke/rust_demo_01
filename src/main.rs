@@ -10,11 +10,15 @@ fn main() {
 
     let mut lock = stdout().lock();
     loop {
-        for f in array.iter() {
-            write!(lock, "{}", f).unwrap();
-        }
-        for f in array.iter().skip(1).rev().skip(1) {
-            write!(lock, "{}", f).unwrap();
-        }
+        array
+            .iter()
+            .for_each(|x| write!(lock, "{}", x).unwrap());
+
+        array
+            .iter()
+            .skip(1)
+            .rev()
+            .skip(1)
+            .for_each(|x| write!(lock, "{}", x).unwrap());
     }
 }
