@@ -1,6 +1,6 @@
 # rust_demo_01
 
-![plot](./c#.png)
+![Rust vs C#](c#.png)
 
 cargo build -r
 
