@@ -1,5 +1,7 @@
 # rust_demo_01
 
+![plot](./c#.png)
+
 cargo build -r
 
 strip target/release/rt
