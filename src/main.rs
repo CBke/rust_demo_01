@@ -1,14 +1,16 @@
+extern crate to_vec;
+use crate::to_vec::ToVec;
 use std::ops::Range;
 fn main() {
     const TERM_WIDTH: usize = 241;
     const WORD: &str = "hello";
 
-    let array: Vec<String> = Range {
+    let array = Range {
         start: 0,
         end: TERM_WIDTH - WORD.len(),
     }
     .map(|i| format!("{}{WORD}", " ".repeat(i)))
-    .collect();
+    .to_vec();
 
     loop {
         array.iter().for_each(|x| println!("{x}"));
